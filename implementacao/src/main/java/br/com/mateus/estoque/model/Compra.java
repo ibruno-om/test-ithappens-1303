@@ -41,10 +41,13 @@ public class Compra extends BasicModel {
   @Transient
   private Filial filial;
 
+  @Transient
+  private String observacao;
+
   @PrePersist
   private void realizaPedido() {
     this.pedidoEstoque = new PedidoEstoque(TipoPedidoEstoque.SAIDA, null, this.usuario,
-        this.cliente, this.filial);
+        this.cliente, this.filial, this.observacao);
   }
 
   @PostLoad

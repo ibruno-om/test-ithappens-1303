@@ -47,7 +47,8 @@ public class CompraService {
     Filial filial = filialRepository.findById(compraData.getIdFifial()).get();
     Usuario usuario = usuarioRepository.findById(compraData.getIdUsuario()).get();
 
-    Compra compra = new Compra(cliente, null, compraData.getFormaPagamento(), usuario, filial);
+    Compra compra = new Compra(cliente, null, compraData.getFormaPagamento(), usuario, filial,
+        compraData.getObservacao());
 
     return compraRepository.save(compra);
   }

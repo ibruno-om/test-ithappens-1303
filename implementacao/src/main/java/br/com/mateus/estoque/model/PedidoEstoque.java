@@ -41,6 +41,8 @@ public class PedidoEstoque extends BasicModel {
   @NotNull(message = "Filial deve ser informada")
   private Filial filial;
 
+  private String observacao;
+
   /**
    * Sobrescrita do método getter parar tratar lista vazia
    *

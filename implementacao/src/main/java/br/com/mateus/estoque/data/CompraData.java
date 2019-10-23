@@ -22,4 +22,6 @@ public class CompraData {
 
   private Long idUsuario;
 
+  private String observacao;
+
 }
