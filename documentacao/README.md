@@ -6,7 +6,11 @@ Necessário ter o Java instalado na versão 8 ou superior.
 
 ## BANCO DE DADOS
 
-O banco de dados é [H2 Database](h2database.com/html/main.html) e está sendo gerado em tempo de execução, assim que a aplicação é iniciada. Você poderá ter acesso aos dados e a estrutura do banco através da url [http://localhost:8080/h2](http://localhost:8080/h2). 
+O banco de dados é [H2 Database](h2database.com/html/main.html) e está sendo gerado em tempo de execução, assim que a aplicação é iniciada. Você poderá ter acesso aos dados e a estrutura do banco através da url [http://localhost:8080/h2](http://localhost:8080/h2). O usuário é **sa**, a senha está em branco e a JDBC URL é **jdbc:h2:mem:estoque**. 
+
+## DADOS INICIAIS
+
+A aplicação gera dados iniciais de clientes, usuários, estoque, filiais e produtos. Caso queira verificar, pode conferir nos links da aplicação referente a esses dados ou no banco de dados.
 
 ## EXECUTANDO A APLICAÇÃO
 
