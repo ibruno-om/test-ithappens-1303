@@ -1,0 +1,7 @@
+br.com.mateus.estoque
+br.com.mateus.estoque.controller
+br.com.mateus.estoque.data
+br.com.mateus.estoque.model
+br.com.mateus.estoque.model.enumerator
+br.com.mateus.estoque.repository
+br.com.mateus.estoque.service

@@ -1,0 +1,28 @@
+<html lang="pt-BR"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/default :: layout (~{::body}, ~{::title})}">
+<title>Clientes</title>
+<body>
+
+<div class="box box-default">
+
+
+  <div class="box-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Código do Cliente</th>
+        <th>Nome do Cliente</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr data-th-each="cliente : ${clientes}">
+        <td class="message" data-th-text="${cliente.id}"></td>
+        <td class="message" data-th-text="${cliente.nome}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>

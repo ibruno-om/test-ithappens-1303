@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:fragment="form (action)">
+
+<div class="box box-default">
+
+  <form th:action="${action}" th:object="${compra}" method="post">
+
+    <div class="box-header with-border">
+      <h3 class="box-title">Dados da Compra</h3>
+    </div>
+
+    <div class="box-body">
+
+      <ul th:if="${#fields.hasErrors('*')}">
+        <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
+      </ul>
+
+      <input type="hidden" th:field="*{id}" />
+
+      <div class="form-group">
+        <label>Cliente</label>
+        <select class="selec2-ajax form-control input-default"
+                data-url="/clientes/pesquisa" th:field="*{idCliente}"></select>
+
+      </div>
+      <div class="form-group">
+        <label>Filial</label>
+        <select class="selec2-ajax form-control input-default"
+                data-url="/filiais/pesquisa" th:field="*{idFifial}"></select>
+
+      </div>
+      <div class="form-group">
+        <label>Usuario</label>
+        <select class="selec2-ajax form-control input-default"
+                data-url="/usuarios/pesquisa" th:field="*{idUsuario}">
+
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Forma Pagamento</label>
+        <select  th:field="*{formaPagamento}" class="select2 form-control input-default">
+          <option
+              th:each="forma : ${T(br.com.mateus.estoque.model.enumerator.FormaPagamento).values()}"
+              th:value="${forma}"
+              th:text="${forma}">
+          </option>
+        </select>
+      </div>
+
+
+
+    </div>
+
+    <div class="box-footer">
+      <button type="submit" class="btn btn-info pull-right">Salvar</button>
+    </div>
+
+
+  </form>
+
+</div>
+</html>

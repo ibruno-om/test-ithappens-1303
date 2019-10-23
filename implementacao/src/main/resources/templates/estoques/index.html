@@ -1,0 +1,35 @@
+<html lang="pt-BR"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/default :: layout (~{::body}, ~{::title})}">
+<title>Estoque</title>
+<body>
+
+<div class="box box-default">
+
+
+  <div class="box-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Código Estoque</th>
+        <th>Filial</th>
+        <th>Produtos</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr data-th-each="estoque : ${estoques}">
+        <td class="message" data-th-text="${estoque.id}"></td>
+        <td class="message" data-th-text="${estoque.filial.nome}"></td>
+        <td class="message">
+          <a
+              th:href="@{'/estoques/{id}/itens'(id=${estoque.id})}"
+              class="edit"> Visualizar
+          </a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>

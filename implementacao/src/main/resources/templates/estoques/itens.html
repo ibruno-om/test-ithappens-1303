@@ -1,0 +1,28 @@
+<html lang="pt-BR"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/default :: layout (~{::body}, ~{::title})}">
+<title>Itens do Estoque</title>
+<body>
+
+<div class="box box-default">
+
+
+  <div class="box-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Produto</th>
+        <th>Quantidade</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="item : ${itensEstoque}">
+        <td class="message" th:text="${item.produto.nome}"></td>
+        <td class="message" th:text="${item.quantidade}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>

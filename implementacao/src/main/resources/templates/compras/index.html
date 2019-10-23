@@ -1,0 +1,43 @@
+<html lang="pt-BR"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/default :: layout (~{::body}, ~{::title})}">
+<title>Compras</title>
+<body>
+
+<div class="box box-default">
+  <div class="box-header with-border">
+    <a class="btn btn-primary pull-right" th:href="@{/compras/new}">Realizar Compra</a>
+  </div>
+
+  <div class="box-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Código da Compra</th>
+        <th>Cliente</th>
+        <th colspan="2">Ações</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr data-th-each="compra : ${compras}">
+        <td class="message" data-th-text="${compra.id}"></td>
+        <td class="message" data-th-text="${compra.cliente.nome}"></td>
+
+        <td>
+          <a
+              th:href="@{'/pedidos/{id}/edit'(id=${compra.pedidoEstoque.id})}"
+              class="btn btn-primary "> Pedido Estoque
+          </a>
+
+          <a th:if="${compra.isItensPresentes()}"
+              th:href="@{'/compras/{id}/finalizar'(id=${compra.id})}"
+              class="btn btn-primary "> Finalizar Compra
+          </a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>

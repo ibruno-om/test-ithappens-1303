@@ -1,0 +1,28 @@
+<html lang="pt-BR"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/default :: layout (~{::body}, ~{::title})}">
+<title>Usuário</title>
+<body>
+
+<div class="box box-default">
+
+
+  <div class="box-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Código do Usuário</th>
+        <th>Nome do Usuário</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr data-th-each="usuario : ${usuarios}">
+        <td class="message" data-th-text="${usuario.id}"></td>
+        <td class="message" data-th-text="${usuario.nome}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>
