@@ -1,5 +1,3 @@
-## SEU CÓDIGO DE IMPLEMENTAÇÃO AQUI NESTE DIRETÓRIO
+## DOCUMENTAÇÃO
 
-```java
-  System.out.println("Se preferir pode editar este arquivo!");
-```
+[CLIQUE AQUI](https://github.com/ibruno-om/test-ithappens-1303/edit/master/documentacao/)
